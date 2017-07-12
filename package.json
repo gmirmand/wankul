@@ -1,0 +1,41 @@
+{
+  "name": "wankul",
+  "version": "1.0.0",
+  "description": "Wankul generator",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-composer": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-ruby-sass": "^2.1.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmirmand/wankul.git"
+  },
+  "keywords": [
+    "wankul"
+  ],
+  "author": "Gaetan Mirmand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmirmand/wankul/issues"
+  },
+  "homepage": "https://github.com/gmirmand/wankul#readme"
+}
