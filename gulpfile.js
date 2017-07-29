@@ -4,12 +4,23 @@ const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
 const sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     css: {
-        src: ['src/AppBundle/Resources/public/sass/**/*.scss'],
+        src: ['app/Resources/web/sass/main.scss'],
         dest: 'web/public/css/main',
-        watch: ['src/AppBundle/Resources/public/sass/**/*.scss']
+        watch: ['app/Resources/web/sass/**/*.scss']
+    },
+    js: {
+        src:[''],
+        dest:[''],
+        watch:['']
+    },
+    html: {
+        src:[''],
+        dest:[''],
+        watch:['']
     }
 };
 
@@ -25,25 +36,25 @@ gulp.task(
         'sass'
     ]);
 
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass'], function () {
+
+    browserSync.init({
+        proxy: "wankul.dev/app_dev.php"
+    });
+
+    gulp.watch(paths.css.watch, ['sass']);
+});
+
 gulp.task(
     'sass', function () {
         return gulp.src(paths.css.src)
-            .pipe(sass().on('error', sass.logError))
+            .pipe(sourcemaps.init())
+            .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+            .pipe(sourcemaps.write())
             .pipe(autoprefixer(autoprefixerOptions))
             .pipe(cssnano())
             .pipe(concat('styles.min.css'))
             .pipe(gulp.dest(paths.css.dest))
             .pipe(browserSync.stream());
     });
-
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function () {
-
-    browserSync.init({
-        proxy: "wankul.dev"
-    });
-
-    gulp.watch(paths.css.watch.concat(paths.css.src), ['sass']);
-    gulp.watch("src/*.html").on('change', browserSync.reload);
-    gulp.watch("web/*.css").on('change', browserSync.reload);
-});

@@ -1,0 +1,11 @@
+{# app/Resources/views/components/header.html.twig #}
+
+{% block header %}
+    <ul>
+        {% if uniqId is defined %}
+            <li>
+                <a href="{{ path( 'app_generator_index', {'uniqId': uniqId}) }}"> {{ uniqId }} </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

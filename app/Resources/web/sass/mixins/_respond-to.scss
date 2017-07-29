@@ -1,0 +1,58 @@
+@import '../variables/_breakpoints.scss';
+
+$breakpoints: (
+        'xxs' : $breakpoint-xxs,
+        'xs' : $breakpoint-xs,
+        'sm' : $breakpoint-sm,
+        'md' : $breakpoint-md,
+        'lg' : $breakpoint-lg,
+        'xl' : $breakpoint-xl,
+        'xxl': $breakpoint-xxl,
+);
+
+/// Wrap @content in media queries
+///
+/// @param {string} $name Media query name
+/// @group media-queries
+@mixin respond-to($name) {
+  // CUSTOM RULES
+  @if $name == h-sm {
+    @media only screen and (min-height: 900px) and (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $name == h-xs-reverse { // SMARTPHONE landscape
+    @media only screen and (max-height: 400px) and (max-width: 700px) {
+      @content;
+    }
+  } @else if $name == md-reverse { // TABLET landscape
+    @media only screen and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $name == h-md-reverse { // TABLET landscape
+    @media only screen and (max-height: $breakpoint-md) and (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $name == h-xxs {
+    @media only screen and (min-height: 700px) and (min-width: $breakpoint-xxs) {
+      @content;
+    }
+  } @else if $name == h-sm { // TABLET H
+    @media only screen and (min-height: 900px) and (min-width: $breakpoint-sm) {
+
+    }
+  } @else if $name == h-lg {
+    @media only screen and (min-height: 900px) and (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $name == xs-reverse {
+    @media only screen and (max-width: $breakpoint-xs) {
+      @content;
+    }
+  }
+    // DEFAULT RULES
+  @else {
+    @media only screen and (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}

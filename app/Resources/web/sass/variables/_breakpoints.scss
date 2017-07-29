@@ -1,0 +1,39 @@
+////
+/// Breakpoint variables
+///
+/// @group media-queries
+////
+
+//
+//  Em breakpoints
+//
+
+/// XXS
+/// @type {number}
+$breakpoint-xxs: 320px !default;
+
+/// XS
+/// @type {number}
+$breakpoint-xs: 480px !default;
+
+
+/// SM
+/// @type {number}
+$breakpoint-sm: 768px !default;
+
+/// MD
+/// @type {number}
+$breakpoint-md: 992px !default;
+
+/// LG
+/// @type {number}
+$breakpoint-lg: 1200px !default;
+
+/// XL
+/// @type {number}
+$breakpoint-xl: 1350px !default;
+
+
+/// XXL
+/// @type {number}
+$breakpoint-xxl: 1900px !default;

@@ -1,0 +1,5 @@
+body {
+  @include respond-to(sm) {
+    background-color: $blue;
+  }
+}
