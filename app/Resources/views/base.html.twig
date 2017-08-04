@@ -3,15 +3,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Test Application{% endblock %}</title>
-    <link rel="stylesheet" href="{{ asset('public/css/main/styles.min.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/main/styles.min.css') }}">
 </head>
 <body>
 <header class="main-header">
     {% include "components/header.html.twig" %}
 </header>
 <div id="content">
-    test
     {% block body %}{% endblock %}
 </div>
 </body>

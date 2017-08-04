@@ -1,3 +1,10 @@
+Wankul
+========================
+
+**Files/folders to get manually :**
+
+    - web/uploads
+
 Symfony Standard Edition
 ========================
 

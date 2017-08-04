@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
-@import 'pages/_hp';
-@import "mixins/_respond-to";
-@import "variables/_fonts";
-@import "variables/_colors";
+@import "utils/variables/_colors.scss";
+@import "utils/variables/_breakpoints.scss";
+@import "utils/variables/_fonts.scss";
+
+@import "utils/mixins/_respond-to.scss";
+
+@import "utils/fonts/_font-face.scss";
+
+@import "pages/_hp.scss";
